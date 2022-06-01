@@ -1,0 +1,20 @@
+node_modules
+.DS_Store
+lib
+dist
+.cache
+.env
+
+# TypeScript cache
+*.tsbuildinfo
+
+coverage
+storybook-static
+build-storybook.log
+yarn-error.log
+
+package-lock.json
+
+.parcel-cache
+
+storybook-docs/

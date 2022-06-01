@@ -1,0 +1,44 @@
+{
+  "name": "klik-core",
+  "version": "0.0.1",
+  "description": "Klik web components",
+  "homepage": "https://github.com/LEGO/klik#readme",
+  "bugs": {
+    "url": "https://github.com/LEGO/klik/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LEGO/klik.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Jørgen Skogmo",
+    "email": "joergen.skogmo.toft@consultant.lego.com"
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf ./lib && rimraf *.tsbuildinfo",
+    "build": "concurrently yarn:build:*",
+    "build:esm": "tsc -p ./tsconfig.json --module es2015 --target es5 --outDir lib/esm",
+    "build:cjs": "tsc -p ./tsconfig.json --module commonjs --target es5 --outDir lib/cjs",
+    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly --declaration --declarationDir lib/types",
+    "lint": "eslint src --ext .ts,.tsx --ignore-path ../../.eslintignore",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.6",
+    "lit": "^2.2.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "jsx": "react"
+  },
+  "exclude": ["tests", "lib", "stories"],
+  "extends": "../../tsconfig.json",
+  "include": ["src"]
+}
