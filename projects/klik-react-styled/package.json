@@ -26,8 +26,8 @@
   "scripts": {
     "prebuild": "rimraf ./lib && rimraf *.tsbuildinfo",
     "build": "concurrently yarn:build:*",
-    "build:cjs": "tsc -p ./tsconfig.json --module commonjs --target es5 --outDir lib/cjs",
-    "build:esm": "tsc -p ./tsconfig.json --module es2015 --target es5 --outDir lib/esm",
+    "build:cjs": "tsc -p ./tsconfig.json --module commonjs --target es6 --outDir lib/cjs",
+    "build:esm": "tsc -p ./tsconfig.json --module es2015 --target es6 --outDir lib/esm",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly --declaration --declarationDir lib/types",
     "lint:tsc": "tsc -p ./tsconfig.json --noemit",
     "lint": "eslint src --ext .ts,.tsx --ignore-path ../../.eslintignore",
