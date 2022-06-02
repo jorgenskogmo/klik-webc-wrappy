@@ -16,6 +16,7 @@ export class KlikRating extends LitElement {
   @property({ reflect: true }) rating: number = 3;
   @property({ reflect: true }) oncolor: string = '#f2a705';
   @property({ reflect: true }) offcolor: string = '#ccc';
+  @property() onChange?: (value:number) => void;
   
   // todo: conform to klik api
   @property({ reflect: true }) readonly?: boolean = false;
@@ -86,9 +87,11 @@ export class KlikRating extends LitElement {
 
     this._prevValue = px;
 
-    console.log('setRatingFromPx', px, this._width);
+    // console.log('setRatingFromPx', px, this._width);
 
     this._value = this._width - px;
+
+    this.onChange && this.onChange(this._value); // todo: should return sth else than the px value...
   }
 
   // todo: add method that sets the initial _value from the rating @prop

@@ -7,7 +7,7 @@ import { KlikRatingStyledComponent as Rating } from './';
 export default {
   title: 'ReactStyled/KlikRatingComponent',
   component: Rating,
-  
+  argTypes: { onChange: { action: 'onChange' } },
 } as ComponentMeta<typeof Rating>;
 
 
